@@ -6,7 +6,12 @@ import { IconMenu, IconX } from "../shared/Icons";
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
-  const isTransparent = location.pathname === "/" || location.pathname === "/careers";
+  
+  // Routes requiring transparent navigation
+  const isTransparent = 
+    location.pathname === "/" || 
+    location.pathname === "/careers" || 
+    location.pathname === "/services/equipment-maintenance";
 
   const navLinks = [
     { name: "Products", path: "/products" },
