@@ -8,9 +8,9 @@ const projects = [
     catColor: "bg-[#FF6D00]",
     img: "https://res.cloudinary.com/dwbjb3svx/image/upload/v1782223509/blog_assets/erqtm3e7ghi6dlb1zcgy.png",
     stats: [
-      { label: "Duration", val: "18 Months" },
-      { label: "Safety", val: "Zero Incidents" },
-      { label: "Team", val: "42 Specialists" }
+      { label: "DURATION", val: "18 Months" },
+      { label: "INCIDENTS", val: "Zero" },
+      { label: "SPECIALISTS", val: "42" }
     ]
   },
   {
@@ -19,9 +19,9 @@ const projects = [
     catColor: "bg-[#007BFF]",
     img: "https://res.cloudinary.com/dwbjb3svx/image/upload/v1782223839/blog_assets/h6t5jsb3jqyqh3wsvbgk.png",
     stats: [
-      { label: "Response", val: "72 Hours" },
-      { label: "Success", val: "100%" },
-      { label: "Responders", val: "30" }
+      { label: "RESPONSE", val: "72 Hours" },
+      { label: "SUCCESS", val: "100%" },
+      { label: "RESPONDERS", val: "30" }
     ]
   },
   {
@@ -30,63 +30,105 @@ const projects = [
     catColor: "bg-[#28A745]",
     img: "https://res.cloudinary.com/dwbjb3svx/image/upload/v1782223927/blog_assets/mtnp0zwq2zxdeopljmml.jpg",
     stats: [
-      { label: "Timeline", val: "24 Months" },
-      { label: "Uptime", val: "98%" },
-      { label: "Engineers", val: "60" }
+      { label: "TIMELINE", val: "24 Months" },
+      { label: "UPTIME", val: "98%" },
+      { label: "ENGINEERS", val: "60" }
     ]
   }
 ];
 
 export default function Projects() {
   return (
-    <section className="py-24 md:py-32 bg-white">
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
+    <section className="py-24 md:py-40 bg-[#F9F9F9]">
+      {/* WIDENED CONTAINER FOR DESKTOP FIDELITY */}
+      <div className="max-w-[1440px] mx-auto px-6 md:px-12">
         
-        {/* EYEBROW & HEADING */}
-        <div className="text-center mb-20">
+        {/* 1. FIGMA HEADER */}
+        <div className="text-center mb-24">
           <Reveal>
-            <div className="flex items-center justify-center gap-4 mb-4">
-              <div className="h-px w-12 bg-industrial/10" />
-              <span className="text-safety text-[10px] font-bold uppercase tracking-[0.4em]">Proven in the field</span>
-              <div className="h-px w-12 bg-industrial/10" />
+            <div className="flex items-center justify-center gap-6 mb-6">
+              <div className="h-px w-16 bg-industrial/10" />
+              <span className="text-safety text-[11px] font-bold uppercase tracking-[0.4em]">
+                PROVEN IN THE FIELD
+              </span>
+              <div className="h-px w-16 bg-industrial/10" />
             </div>
-            <h2 className="text-4xl md:text-6xl font-display font-bold text-industrial uppercase tracking-tight">Our Projects</h2>
-            <p className="text-industrial/40 text-sm mt-4 max-w-2xl mx-auto">From offshore operations to emergency response, our work delivers results at scale.</p>
+            <h2 className="text-6xl md:text-8xl font-display font-bold text-industrial uppercase tracking-tight leading-none">
+              Our Projects
+            </h2>
+            <p className="text-industrial/40 text-sm md:text-base mt-8 max-w-2xl mx-auto font-light">
+              From offshore operations to emergency response, our work delivers results at scale.
+            </p>
           </Reveal>
         </div>
 
-        {/* PROJECT GRID */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {/* 2. PROJECT GRID */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10">
           {projects.map((p, i) => (
             <Reveal key={i} delay={i * 0.1}>
-              <div className="group bg-white rounded-[32px] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.06)] border border-black/5 flex flex-col h-full">
-                {/* Image & Badge */}
-                <div className="relative aspect-video overflow-hidden">
-                  <img src={p.img} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt={p.title} />
-                  <div className={`absolute top-4 left-4 px-3 py-1 ${p.catColor} text-white text-[9px] font-bold uppercase tracking-widest rounded-md`}>
-                    {p.category}
+              <div className="bg-white rounded-[50px] p-8 lg:p-12 shadow-[0_40px_100px_-20px_rgba(0,0,0,0.08)] border border-black/5 flex flex-col h-full transition-all duration-500 hover:shadow-[0_60px_150px_-20px_rgba(0,0,0,0.12)]">
+                
+                {/* BADGE */}
+                <div className={`w-fit px-4 py-1.5 ${p.catColor} text-white text-[10px] font-bold uppercase tracking-[0.2em] rounded-md mb-8`}>
+                  {p.category}
+                </div>
+
+                {/* INSET IMAGE */}
+                <div className="relative aspect-[1.6/1] rounded-2xl overflow-hidden mb-10">
+                  <img 
+                    src={p.img} 
+                    className="w-full h-full object-cover" 
+                    alt={p.title} 
+                  />
+                </div>
+
+                {/* TITLE: CALIBRATED FOR WIDTH */}
+                <h3 className="text-4xl lg:text-5xl font-display text-industrial uppercase leading-[0.95] mb-12 break-words">
+                  {p.title}
+                </h3>
+
+                {/* TECHNICAL STAT ROW: BULLETPROOF FLEX GRID */}
+                <div className="flex items-center justify-between mb-10">
+                  <div className="flex-1">
+                    <p className="text-2xl lg:text-3xl font-sans font-light text-industrial leading-none">
+                      {p.stats[0].val.split(' ')[0]}
+                      <span className="text-sm block mt-1">{p.stats[0].val.split(' ')[1] || ''}</span>
+                    </p>
+                    <p className="text-[9px] text-industrial/40 font-bold uppercase mt-2 tracking-wider">
+                      {p.stats[0].label}
+                    </p>
+                  </div>
+                  
+                  <div className="w-px h-10 bg-black/10 mx-4" />
+                  
+                  <div className="flex-1 text-center">
+                    <p className="text-2xl lg:text-3xl font-sans font-light text-industrial leading-none">
+                      {p.stats[1].val}
+                    </p>
+                    <p className="text-[9px] text-industrial/40 font-bold uppercase mt-2 tracking-wider">
+                      {p.stats[1].label}
+                    </p>
+                  </div>
+                  
+                  <div className="w-px h-10 bg-black/10 mx-4" />
+                  
+                  <div className="flex-1 text-right">
+                    <p className="text-2xl lg:text-3xl font-sans font-light text-industrial leading-none">
+                      {p.stats[2].val}
+                    </p>
+                    <p className="text-[9px] text-industrial/40 font-bold uppercase mt-2 tracking-wider">
+                      {p.stats[2].label}
+                    </p>
                   </div>
                 </div>
 
-                {/* Content */}
-                <div className="p-8 flex flex-col flex-1">
-                  <h3 className="text-xl font-display font-bold text-industrial mb-8 uppercase tracking-wide">{p.title}</h3>
-                  
-                  {/* 3-COLUMN STAT GRID */}
-                  <div className="grid grid-cols-3 gap-2 pt-6 border-t border-black/5">
-                    {p.stats.map((s, idx) => (
-                      <div key={idx}>
-                        <p className="text-[9px] text-industrial/30 uppercase font-bold mb-1">{s.label}</p>
-                        <p className="text-[11px] font-bold text-industrial leading-tight">{s.val}</p>
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* ISO MICRO-COPY */}
-                  <p className="mt-6 text-[9px] text-industrial/30 text-center italic">
+                {/* FOOTER SEPARATOR & ISO TEXT */}
+                <div className="mt-auto pt-8 border-t border-black/5">
+                  <p className="text-[11px] text-industrial/30 text-center font-medium tracking-wide">
                     Delivered with ISO-certified safety standards
                   </p>
                 </div>
+
               </div>
             </Reveal>
           ))}
