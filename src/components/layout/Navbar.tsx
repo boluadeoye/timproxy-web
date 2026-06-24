@@ -20,7 +20,11 @@ export default function Navbar() {
       <nav className="absolute top-0 w-full z-[100] bg-transparent py-6 md:py-10">
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
           <Link to="/" className="relative z-[110]">
-            <img src="https://res.cloudinary.com/dwbjb3svx/image/upload/v1782223417/blog_assets/bymb4ayvgepu31mv18al.png" className="h-6 md:h-9 w-auto object-contain" alt="Timproxy" />
+            <img 
+              src="https://res.cloudinary.com/dwbjb3svx/image/upload/v1782223417/blog_assets/bymb4ayvgepu31mv18al.png" 
+              className="h-12 md:h-16 w-auto object-contain" 
+              alt="Timproxy" 
+            />
           </Link>
 
           <div className="hidden md:flex items-center gap-8 lg:gap-12">
@@ -66,13 +70,6 @@ export default function Navbar() {
                   {link.name}
                 </Link>
               ))}
-              <Link 
-                to="/contact" 
-                onClick={() => setIsOpen(false)} 
-                className="text-4xl font-display tracking-widest uppercase text-safety"
-              >
-                Contact
-              </Link>
             </div>
           </motion.div>
         )}
