@@ -12,6 +12,7 @@ import Footer from "./components/layout/Footer";
 import Services from "./pages/Services";
 import EquipmentMaintenance from "./pages/EquipmentMaintenance";
 import Products from "./pages/Products";
+import Careers from "./pages/Careers";
 
 const Home = () => (
   <main className="relative min-h-screen bg-white">
@@ -34,6 +35,7 @@ export default function App() {
         <Route path="/services" element={<Services />} />
         <Route path="/services/equipment-maintenance" element={<EquipmentMaintenance />} />
         <Route path="/products" element={<Products />} />
+        <Route path="/careers" element={<Careers />} />
       </Routes>
     </Router>
   );
