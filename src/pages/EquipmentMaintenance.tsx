@@ -70,11 +70,11 @@ export default function EquipmentMaintenance() {
         </div>
       </section>
 
-      {/* 2. WHAT WE CAN DO FOR YOU: 5-COLUMN SIDE-SCROLL MONOLITH */}
+      {/* 2. WHAT WE CAN DO FOR YOU: NORMAL CASE & SUBTLE ROUNDING */}
       <section className="py-24 md:py-32 bg-white overflow-hidden">
         <div className="max-w-[1440px] mx-auto px-6 md:px-12">
           <div className="mb-16 text-center">
-            <h2 className="text-4xl md:text-5xl font-display text-industrial uppercase tracking-tight">
+            <h2 className="text-3xl md:text-5xl font-sans font-bold text-industrial tracking-tight normal-case">
               What we can do for you
             </h2>
           </div>
@@ -82,7 +82,7 @@ export default function EquipmentMaintenance() {
           <div className="flex overflow-x-auto snap-x snap-mandatory no-scrollbar gap-4 pb-10 -mx-6 px-6 md:mx-0 md:px-0 lg:grid lg:grid-cols-5 lg:overflow-visible lg:gap-6">
             {capabilities.map((card, idx) => (
               <Reveal key={idx} delay={idx * 0.05} className="flex-none w-[85vw] sm:w-[45vw] md:w-[350px] lg:w-full snap-center">
-                <div className="relative aspect-[3/4.5] rounded-[32px] overflow-hidden group shadow-2xl border border-black/5">
+                <div className="relative aspect-[3/4.5] rounded-xl overflow-hidden group shadow-xl border border-black/5">
                   <img 
                     src={card.img} 
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" 
@@ -100,9 +100,9 @@ export default function EquipmentMaintenance() {
         </div>
       </section>
 
-      {/* 3. WHY IT MATTERS: ANCHORED RIGHT (SIDE-BY-SIDE) */}
+      {/* 3. WHY IT MATTERS: RIGHT ANCHOR & SUBTLE ROUNDING */}
       <section className="py-24 bg-[#F5F5F5] px-6">
-        <div className="max-w-7xl mx-auto bg-white rounded-[40px] md:rounded-[60px] shadow-sm border border-black/5 overflow-hidden">
+        <div className="max-w-7xl mx-auto bg-white rounded-2xl shadow-sm border border-black/5 overflow-hidden">
           <div className="flex flex-col md:flex-row items-center gap-12 md:gap-20 p-8 md:p-20">
             <div className="w-full md:w-1/2">
               <Reveal>
@@ -119,7 +119,7 @@ export default function EquipmentMaintenance() {
             </div>
             <div className="w-full md:w-1/2">
               <Reveal delay={0.2}>
-                <div className="rounded-[32px] overflow-hidden shadow-2xl aspect-video md:aspect-square lg:aspect-video">
+                <div className="rounded-xl overflow-hidden shadow-2xl aspect-video md:aspect-square lg:aspect-video">
                   <img 
                     src="https://res.cloudinary.com/dwbjb3svx/image/upload/v1782223927/blog_assets/mtnp0zwq2zxdeopljmml.jpg" 
                     className="w-full h-full object-cover" 
@@ -132,21 +132,19 @@ export default function EquipmentMaintenance() {
         </div>
       </section>
 
-      {/* 4. OTHER SERVICES: 4-COLUMN SIDE-SCROLL LEDGER */}
+      {/* 4. OTHER SERVICES: CENTERED, NORMAL CASE, SIDE-SCROLL */}
       <section className="py-24 md:py-32 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <div className="flex items-center justify-between mb-16">
-            <h2 className="text-3xl md:text-5xl font-display text-industrial uppercase tracking-tight">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-sans font-bold text-industrial tracking-tight normal-case">
               Other Services
             </h2>
-            <div className="hidden md:block h-px bg-industrial/10 flex-1 mx-12" />
           </div>
           
-          {/* SIDE-SCROLL ON MOBILE, 4-COL GRID ON DESKTOP */}
           <div className="flex overflow-x-auto snap-x snap-mandatory no-scrollbar gap-6 pb-10 -mx-6 px-6 md:mx-0 md:px-0 md:grid md:grid-cols-4 md:overflow-visible">
             {otherServices.map((s, idx) => (
               <Reveal key={idx} delay={idx * 0.1} className="flex-none w-[80vw] sm:w-[40vw] md:w-full snap-center">
-                <div className="bg-white rounded-3xl border border-black/5 overflow-hidden flex flex-col h-full hover:shadow-xl transition-all">
+                <div className="bg-white rounded-xl border border-black/5 overflow-hidden flex flex-col h-full hover:shadow-xl transition-all">
                   <div className="aspect-video overflow-hidden">
                     <img 
                       src={s.img} 
