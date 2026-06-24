@@ -69,7 +69,7 @@ export default function Products() {
         </div>
         <div className="relative z-20 max-w-[1440px] mx-auto px-6 pt-24">
           <Reveal>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-display text-white tracking-tight uppercase mb-6 lg:whitespace-nowrap">
+            <h1 className="text-[clamp(2rem,6vw,6rem)] font-display text-white tracking-tight uppercase mb-6 md:whitespace-nowrap">
               Explore Our Product Range
             </h1>
             <p className="text-white/90 text-sm md:text-lg max-w-3xl mx-auto font-light leading-relaxed mb-12">
@@ -82,10 +82,10 @@ export default function Products() {
         </div>
       </section>
 
-      {/* PRODUCT GRID: STRICT 3x3 MATRIX (9 ITEMS) */}
+      {/* PRODUCT GRID: ENFORCED 3x3 MATRIX (md:grid-cols-3) */}
       <section className="py-24 md:py-32 bg-white">
         <div className="max-w-[1440px] mx-auto px-6 md:px-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-20">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-x-10 gap-y-20">
             {products.map((p, idx) => (
               <Reveal key={idx} delay={(idx % 3) * 0.05}>
                 <div className="group bg-white flex flex-col h-full transition-all duration-300 rounded-none">
