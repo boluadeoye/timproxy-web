@@ -27,10 +27,11 @@ const reasons = [
 
 export default function WhyChooseUs() {
   return (
-    <section className="py-24 md:py-40 bg-white">
+    /* RECALIBRATED PADDING: pt-12 md:pt-20 to close the gap */
+    <section className="pt-12 md:pt-20 pb-24 md:pb-40 bg-white">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         
-        {/* SECTION HEADING: DARK & BOLD AS PER FIGMA */}
+        {/* SECTION HEADING */}
         <div className="text-center mb-20">
           <Reveal>
             <h2 className="text-4xl md:text-6xl font-display font-bold text-industrial uppercase tracking-tight mb-4">
@@ -43,7 +44,6 @@ export default function WhyChooseUs() {
         </div>
 
         <Reveal>
-          {/* GRID: FORCED SIDE-BY-SIDE ON MD+ */}
           <div className="bg-white rounded-[40px] shadow-2xl border border-black/5 overflow-hidden">
             <div className="grid grid-cols-1 md:grid-cols-2 items-stretch">
               
@@ -61,7 +61,6 @@ export default function WhyChooseUs() {
                 <div className="space-y-10">
                   {reasons.map((item, i) => (
                     <div key={i} className="flex items-start gap-6 group">
-                      {/* ICON: SOFT ORANGE CIRCLE */}
                       <div className="mt-1 w-6 h-6 rounded-full bg-safety/10 flex items-center justify-center text-safety shrink-0">
                         <IconCheck size={14} />
                       </div>
